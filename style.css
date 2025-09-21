@@ -1,0 +1,99 @@
+:root {
+  --primary-color: #D9A299; /* Dusty rose for hover/active */
+  --secondary-color: #DCC5B2; /* Light taupe for navbar background */
+  --background-color: #F0E4D3; /* Creamy beige for page */
+  --highlight-color: #FAF7F3; /* Near white for sub-menu/content */
+  --text-color: #2C1A0D; /* Dark brown for text */
+}
+
+/* Reset defaults */
+body {
+  margin: 0;
+  padding: 0; /* removed 20px padding */
+  background: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Georgia', serif;
+}
+
+/* Navbar */
+nav {
+  background: var(--secondary-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 20px;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px 15px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  background-color: var(--primary-color);
+  color: var(--highlight-color);
+}
+
+nav ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--highlight-color);
+  min-width: 150px;
+}
+
+nav ul li:hover ul {
+  display: block;
+}
+
+/* Content containers */
+.content {
+  padding: 15px; /* reduced padding */
+  margin: 15px auto; /* reduced margin */
+  max-width: 1200px; /* keeps it centered & not too wide */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  line-height: 1.6;
+}
+
+/* Gallery */
+#gallery {
+  padding: 15px; /* reduced padding */
+  margin: 15px auto; /* tighter spacing */
+  max-width: 1200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  gap: 15px; /* smaller gap between items */
+}
+
+/* Footer */
+footer {
+  display: flex;
+  position: relative;
+  width: 100%;
+  background: var(--secondary-color);
+  font-size: 12px;
+  color: var(--text-color);
+  padding: 10px; /* added consistent footer padding */
+}
